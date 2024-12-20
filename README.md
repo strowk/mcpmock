@@ -17,7 +17,7 @@ go install github.com/strowk/mcpmock
 
 ## Usage
 
-For example you define something like this in a YAML file:
+For example if you define something like this in a YAML file:
 
 ```yaml
 case: List tools
@@ -30,12 +30,12 @@ out: {"jsonrpc": "2.0", "result":{ "tools": [{"description": "Hello MCP", "input
 
 ---
 
-case: Call current dir files tool
+case: Call Hello tool
 
-# requesting list of files in the current directory
+# calling the tool
 in: {"jsonrpc": "2.0", "method": "tools/call", "params": {"name": "hello", "arguments": {}}, "id": 1}
 
-# expect list of files returned as text content without error
+# expect "Hi!" as output
 out: {
   "jsonrpc": "2.0", 
   "id": 1,
