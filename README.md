@@ -66,7 +66,7 @@ If you now copy and paste this into your terminal:
 And sending this:
 
 ```json
-{"jsonrpc": "2.0", "method": "tools/call", "params": {"name": "list-current-dir-files", "arguments": {}}, "id": 1}
+{"jsonrpc": "2.0", "method": "tools/call", "params": {"name": "hello", "arguments": {}}, "id": 1}
 ```
 
 , you should get the output as defined in second case.
