@@ -1,6 +1,6 @@
 {
   "name": "@strowk/mcpmock-linux-x64",
-  "version": "0.0.2-beta.1",
+  "version": "0.0.2",
   "os": [
     "linux",
     "freebsd"
