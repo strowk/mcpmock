@@ -1,11 +1,11 @@
 {
-  "name": "@strowk/mcpmock-win32-arm64",
-  "version": "0.0.1",
+  "name": "@strowk/mcpmock-win32-x64",
+  "version": "0.0.1-beta.2",
   "os": [
     "win32"
   ],
   "cpu": [
-    "arm64"
+    "x64"
   ],
   "repository": {
     "type": "git",
@@ -19,5 +19,5 @@
     "url": "https://github.com/strowk/mcpmock/issues"
   },
   "homepage": "https://github.com/strowk/mcpmock#readme",
-  "description": "mcpmock - Windows ARM64 build"
+  "description": "mcpmock - Windows x64 build"
 }
