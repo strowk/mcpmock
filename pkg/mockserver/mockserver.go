@@ -1,4 +1,4 @@
-package fxm
+package mockserver
 
 import (
 	"context"
@@ -164,7 +164,7 @@ func (s *mockServer) Run() error {
 				} else if intId, ok := outId.(int); ok {
 					id = jsonrpc2.NewIntRequestId(intId)
 				} else {
-					log.Printf("fxm: unexpected id type: %v", outId)
+					log.Printf("mcpmock: unexpected id type: %v", outId)
 					continue
 				}
 				result := out["result"]
@@ -179,7 +179,7 @@ func (s *mockServer) Run() error {
 						Error: err,
 					}
 				} else {
-					log.Printf("fxm: unexpected output registered: %v", out)
+					log.Printf("mcpmock: unexpected output registered: %v", out)
 				}
 			}
 		}

@@ -12,12 +12,12 @@ import (
 
 func main() {
 	if len(os.Args) < 2 {
-		log.Fatal("fxm: Please provide a path to the folder with scenarios")
+		log.Fatal("mcpmock: Please provide a path to the folder with scenarios")
 	}
 	srv := mockserver.NewMockServer(os.Args[1])
 	c := make(chan os.Signal, 1)
 	go func() {
-		log.Println("fxm: Started server, press Ctrl+C to shutdown")
+		log.Println("mcpmock: Started server, press Ctrl+C to shutdown")
 		<-c
 		ctx, cancelFunc := context.WithTimeout(context.Background(), 5*time.Second)
 		defer cancelFunc()
