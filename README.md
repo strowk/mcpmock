@@ -22,6 +22,8 @@ Download prebulit binaries from the [releases](https://github.com/strowk/mcpmock
 go get github.com/strowk/mcpmock
 ```
 
+## Usage
+
 ```yaml
 case: List tools
 
