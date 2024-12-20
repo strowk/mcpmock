@@ -9,7 +9,7 @@ For example you define something like this in a YAML file:
 ### From npm
 
 ```bash
-npm install -g mcpmock
+npm install -g @strowk/mcpmock
 ```
 
 ### Github Releases

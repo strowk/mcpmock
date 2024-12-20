@@ -1,6 +1,6 @@
 # mcpmock
 
-Install: `npm install -g mcpmock`
+Install: `npm install -g @strowk/mcpmock`
 
 mcpmock is a CLI tool that generates a mock [Model Context Protocol](https://modelcontextprotocol.io/) server from list of cases in a YAML file.
 
