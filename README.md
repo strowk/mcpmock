@@ -4,20 +4,15 @@ CLI tool that generates a mock [Model Context Protocol](https://modelcontextprot
 
 ## Installation
 
-### From npm
+From npm: `npm install -g @strowk/mcpmock`
 
-```bash
-npm install -g @strowk/mcpmock
-```
+From Github Releases: [Download](https://github.com/strowk/mcpmock/releases), unpack and put binary in your PATH
 
-### Github Releases
-
-Download prebulit binaries from the [releases](https://github.com/strowk/mcpmock/releases) page and put in your PATH
-
-### From source
+From sources:
 
 ```bash
 go get github.com/strowk/mcpmock
+go install github.com/strowk/mcpmock
 ```
 
 ## Usage
