@@ -13,7 +13,7 @@ func TestWithFoxytest(t *testing.T) {
 	if err != nil {
 		t.Fatal(err)
 	}
-	ts.WithExecutable("go", []string{"run", "main.go", "testdata"})
+	ts.WithExecutable("go", []string{"run", "main.go", "serve", "testdata"})
 	cntrl := foxytest.NewTestRunner(t)
 	ts.WithLogging()
 	ts.Run(cntrl)

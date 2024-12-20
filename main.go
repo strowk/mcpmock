@@ -11,10 +11,13 @@ import (
 )
 
 func main() {
-	if len(os.Args) < 2 {
-		log.Fatal("mcpmock: Please provide a path to the folder with scenarios")
+	if len(os.Args) < 3 {
+		log.Fatal("Usage: mcpmock serve <path to scenarios folder>")
 	}
-	srv := mockserver.NewMockServer(os.Args[1])
+	if os.Args[1] != "serve" {
+		log.Fatal("Usage: mcpmock serve <path to scenarios folder>")
+	}
+	srv := mockserver.NewMockServer(os.Args[2])
 	c := make(chan os.Signal, 1)
 	go func() {
 		log.Println("mcpmock: Started server, press Ctrl+C to shutdown")

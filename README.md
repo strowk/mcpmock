@@ -57,7 +57,7 @@ out: {
 Then if you put it in the folder `testdata` and run mcpmock like this:
 
 ```bash
-mcpmock testdata
+mcpmock serve testdata
 ```
 
 It would start a mock MCP server with stdio transport that would serve the cases defined in the YAML file.
