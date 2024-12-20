@@ -1,6 +1,13 @@
-# mcpmock
+<h1 align="center">
+   mcpmock
+</h1>
 
-CLI tool that generates a mock [Model Context Protocol](https://modelcontextprotocol.io/) server from list of cases in a YAML file.
+<h4 align="center">CLI tool that generates a mock <a href="https://modelcontextprotocol.io">Model Context Protocol</a> server from list of cases in a YAML file.</h4>
+
+<p align="center">
+	<a href="https://github.com/strowk/mcpmock/actions/workflows/test.yaml"><img src="https://github.com/strowk/mcpmock/actions/workflows/test.yaml/badge.svg"/></a>
+	<a href="https://github.com/strowk/mcpmock/actions/workflows/golangci-lint.yaml"><img src="https://github.com/strowk/mcpmock/actions/workflows/golangci-lint.yaml/badge.svg"/></a>
+</p>
 
 ## Installation
 
