@@ -10,14 +10,14 @@ case: List tools
 in: {"jsonrpc": "2.0", "method": "tools/list", "id": 1}
 
 # expect one tool in the list
-out: {"jsonrpc": "2.0", "result":{ "tools": [{"description": "Lists files in the current directory", "inputSchema": {"type": "object"}, "name": "list-current-dir-files"}] }, "id": 1}
+out: {"jsonrpc": "2.0", "result":{ "tools": [{"description": "Hello MCP", "inputSchema": {"type": "object"}, "name": "hello"}] }, "id": 1}
 
 ---
 
 case: Call current dir files tool
 
 # requesting list of files in the current directory
-in: {"jsonrpc": "2.0", "method": "tools/call", "params": {"name": "list-current-dir-files", "arguments": {}}, "id": 1}
+in: {"jsonrpc": "2.0", "method": "tools/call", "params": {"name": "hello", "arguments": {}}, "id": 1}
 
 # expect list of files returned as text content without error
 out: {
@@ -25,13 +25,7 @@ out: {
   "id": 1,
   "result": {
     "content": [
-      {"type": "text", "text": ".gitignore"},
-      {"type": "text", "text": "README.md"},
-      {"type": "text", "text": "go.mod"},
-      {"type": "text", "text": "go.sum"},
-      {"type": "text", "text": "main.go"},
-      {"type": "text", "text": "main_test.go"},
-      {"type": "text", "text": "testdata"},
+      {"type": "text", "text": "Hi!"}
     ],
     "isError": false
   }, 
