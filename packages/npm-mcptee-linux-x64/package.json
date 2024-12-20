@@ -1,0 +1,24 @@
+{
+  "name": "@strowk/mcpmock-linux-x64",
+  "version": "0.0.1",
+  "os": [
+    "linux",
+    "freebsd"
+  ],
+  "cpu": [
+    "x64"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/strowk/mcpmock.git"
+  },
+  "keywords": [
+    "MCP"
+  ],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/strowk/mcpmock/issues"
+  },
+  "homepage": "https://github.com/strowk/mcpmock#readme",
+  "description": "mcpmock - Linux x64 build"
+}

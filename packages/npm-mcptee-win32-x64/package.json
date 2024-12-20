@@ -1,0 +1,23 @@
+{
+  "name": "@strowk/mcpmock-win32-x64",
+  "version": "0.0.1",
+  "os": [
+    "win32"
+  ],
+  "cpu": [
+    "x64"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/strowk/mcpmock.git"
+  },
+  "keywords": [
+    "MCP"
+  ],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/strowk/mcpmock/issues"
+  },
+  "homepage": "https://github.com/strowk/mcpmock#readme",
+  "description": "mcpmock - Windows x64 build"
+}

@@ -1,0 +1,23 @@
+{
+  "name": "@strowk/mcpmock-darwin-arm64",
+  "version": "0.0.1",
+  "os": [
+    "darwin"
+  ],
+  "cpu": [
+    "arm64"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/strowk/mcpmock.git"
+  },
+  "keywords": [
+    "MCP"
+  ],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/strowk/mcpmock/issues"
+  },
+  "homepage": "https://github.com/strowk/mcpmock#readme",
+  "description": "mcpmock - Darwin ARM64 build"
+}

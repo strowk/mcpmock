@@ -1,26 +1,10 @@
 # mcpmock
 
-CLI tool that generates a mock [Model Context Protocol](https://modelcontextprotocol.io/) server from list of cases in a YAML file.
+Install: `npm install -g mcpmock`
+
+mcpmock is a CLI tool that generates a mock [Model Context Protocol](https://modelcontextprotocol.io/) server from list of cases in a YAML file.
 
 For example you define something like this in a YAML file:
-
-## Installation
-
-### From npm
-
-```bash
-npm install -g mcpmock
-```
-
-### Github Releases
-
-Download prebulit binaries from the [releases](https://github.com/strowk/mcpmock/releases) page and put in your PATH
-
-### From source
-
-```bash
-go get github.com/strowk/mcpmock
-```
 
 ```yaml
 case: List tools
