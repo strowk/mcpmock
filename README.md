@@ -2,8 +2,6 @@
 
 CLI tool that generates a mock [Model Context Protocol](https://modelcontextprotocol.io/) server from list of cases in a YAML file.
 
-For example you define something like this in a YAML file:
-
 ## Installation
 
 ### From npm
@@ -23,6 +21,8 @@ go get github.com/strowk/mcpmock
 ```
 
 ## Usage
+
+For example you define something like this in a YAML file:
 
 ```yaml
 case: List tools
