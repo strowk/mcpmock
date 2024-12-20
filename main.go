@@ -24,8 +24,14 @@ func main() {
 		<-c
 		ctx, cancelFunc := context.WithTimeout(context.Background(), 5*time.Second)
 		defer cancelFunc()
-		srv.Stop(ctx)
+		err := srv.Stop(ctx)
+		if err != nil {
+			log.Fatalf("mcpmock: Error stopping server: %v", err)
+		}
 	}()
 	signal.Notify(c, os.Interrupt)
-	srv.Run()
+	err := srv.Run()
+	if err != nil {
+		log.Fatalf("mcpmock: Error running server: %v", err)
+	}
 }
