@@ -55,7 +55,7 @@ out: {
 }
 ```
 
-Then if you put it in the folder `testdata` and run mcpmock like this:
+Then if you put it in the folder `testdata` (make sure file also ends with `_test.yaml`) and run mcpmock like this:
 
 ```bash
 mcpmock serve testdata
