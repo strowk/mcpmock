@@ -48,6 +48,13 @@ type expectedOutput struct {
 }
 
 func (e *expectedOutput) check(srv *mockServer) {
+	if _, hasId := e.value["id"]; hasId {
+		// when expectation has id, we need to write the last anchor id to it
+		// if we have it available, as we assume the output is response to the last anchor
+		if srv.lastAnchorId != "" {
+			e.value["id"] = srv.lastAnchorId
+		}
+	}
 	srv.outputsChan <- e.value
 }
 
@@ -64,6 +71,8 @@ type mockServer struct {
 
 	stopChan chan struct{}
 
+	lastAnchorId interface{}
+
 	responsesChan chan jsonrpc2.JsonRpcResponse
 	tp            server.Transport
 	logger        foxyevent.Logger
@@ -74,21 +83,30 @@ func (s *mockServer) GetResponses() chan jsonrpc2.JsonRpcResponse {
 }
 
 func (s *mockServer) Handle(b []byte) {
-	var unmarshalled map[string]interface{}
-	err := json.Unmarshal(b, &unmarshalled)
+	var unmarshalledInput map[string]interface{}
+	err := json.Unmarshal(b, &unmarshalledInput)
 	if err != nil {
 		panic(err)
 	}
 
-	data, err := json.Marshal(unmarshalled)
+	if anchorId, ok := unmarshalledInput["id"]; ok {
+		s.lastAnchorId = anchorId
+	}
+
+	// remove id from input, we cannot know it in advance
+	unmarshalledInput["id"] = nil
+
+	data, err := json.Marshal(unmarshalledInput)
 	if err != nil {
 		panic(err)
 	}
 
-	mc := s.anchorMap[string(data)]
-
-	for _, exp := range mc.expectations {
-		exp.check(s)
+	if mc, ok := s.anchorMap[string(data)]; ok {
+		for _, exp := range mc.expectations {
+			exp.check(s)
+		}
+	} else {
+		log.Printf("mcpmock: unexpected input received, no matching anchor for: %v", unmarshalledInput)
 	}
 }
 
@@ -128,6 +146,9 @@ func NewMockServer(path string) *mockServer {
 				mc.expectations = append(mc.expectations, &expectedOutput{value: o})
 			}
 
+			// remove id from anchor input, we cannot know it in advance to use in matching
+			anchorInput["id"] = nil
+
 			marshalledAnchor, err := json.Marshal(anchorInput)
 			if err != nil {
 				panic(err)
@@ -163,8 +184,10 @@ func (s *mockServer) Run() error {
 					id = jsonrpc2.NewStringRequestId(stringId)
 				} else if intId, ok := outId.(int); ok {
 					id = jsonrpc2.NewIntRequestId(intId)
+				} else if floatId, ok := outId.(float64); ok {
+					id = jsonrpc2.NewIntRequestId(int(floatId))
 				} else {
-					log.Printf("mcpmock: unexpected id type: %v", outId)
+					log.Printf("mcpmock: unexpected id type: %T %v", outId, outId)
 					continue
 				}
 				result := out["result"]
