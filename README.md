@@ -77,3 +77,11 @@ And sending this:
 ```
 
 , you should get the output as defined in second case.
+
+It would also take care to replace the `id` field in the response with the `id` from the request, so if you send this:
+
+```json
+{"jsonrpc": "2.0", "method": "tools/call", "params": {"name": "hello", "arguments": {}}, "id": 2}
+```
+
+, you should get the output as defined in second case, but with `id` field set to `2`.
