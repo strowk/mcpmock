@@ -1,17 +1,17 @@
 {
   "name": "@strowk/mcpmock",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "main": "./index.js",
   "bin": {
     "mcpmock": "bin/cli"
   },
   "optionalDependencies": {
-    "@strowk/mcpmock-darwin-x64": "0.0.2",
-    "@strowk/mcpmock-darwin-arm64": "0.0.2",
-    "@strowk/mcpmock-linux-x64": "0.0.2",
-    "@strowk/mcpmock-linux-arm64": "0.0.2",
-    "@strowk/mcpmock-win32-x64": "0.0.2",
-    "@strowk/mcpmock-win32-arm64": "0.0.2"
+    "@strowk/mcpmock-darwin-x64": "0.0.3",
+    "@strowk/mcpmock-darwin-arm64": "0.0.3",
+    "@strowk/mcpmock-linux-x64": "0.0.3",
+    "@strowk/mcpmock-linux-arm64": "0.0.3",
+    "@strowk/mcpmock-win32-x64": "0.0.3",
+    "@strowk/mcpmock-win32-arm64": "0.0.3"
   },
   "repository": {
     "type": "git",
